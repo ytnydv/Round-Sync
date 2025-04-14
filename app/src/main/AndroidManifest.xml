@@ -24,8 +24,6 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.UPDATE_PACKAGES_WITHOUT_USER_ACTION" />
 
-
-
     <application
         android:allowBackup="true"
         android:icon="${appIcon}"
@@ -114,6 +112,9 @@
         <receiver
             android:name=".BroadcastReceivers.ClearReportBroadcastReciever"
             android:exported="false" />
+        <receiver
+            android:name=".BroadcastReceivers.SyncRestartAction"
+            android:exported="true" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -216,7 +217,13 @@
         <activity
             android:name=".Activities.TriggerActivity"
             android:label="@string/title_activity_trigger"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- Auto Language Generation -->
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.FilterActivity"
+            android:label="@string/title_activity_filter"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <!-- Auto Language Generation -->
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"
